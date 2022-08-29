@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bike Sharing Demand Prediction</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+
+
+        <!-- body content -->
+ </div>
+ <div class="login">
+	<h1>Bike Sharing Demand Prediction</h1>
+    <h4>Developed by Naga Sai</h4>
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <h3> Season:
+        <select name="Winter">
+            <option value=1>Winter</option>
+            <option value=0>Autumn</option>
+            <option value=0>Spring</option>
+            <option value=0>Summer</option>
+        </select>
+        </h3>
+        <h3> Functioning Day:
+        <select name = "Functioning Day">
+            <option value=0>No</option>
+            <option value=1>Yes</option>
+        </select>
+        </h3>
+
+        <h3>Solar Radiation :<input type="text" name="Solar Radiation (MJ/m2)" placeholder="Solar Radiation (MJ/m2)(0-1)" required="required" /></h3>
+        <h3>Humidity :<input type="text" name="Humidity(%)" placeholder="Humidity(%) range(1-100)" required="required" /></h3>
+        <h3> Hour:
+            <select name="Hour_18">
+            <option value=0>0:00</option>
+            <option value=0>1:00 AM</option>
+            <option value=0>2:00 AM</option>
+            <option value=0>2:00 AM</option>
+            <option value=0>3:00 AM</option>
+            <option value=0>4:00 AM</option>
+            <option value=0>5:00 AM</option>
+            <option value=0>6:00 AM</option>
+            <option value=0>7:00 AM</option>
+            <option value=0>8:00 AM</option>
+            <option value=0>9:00 AM</option>
+            <option value=0>10:00 AM</option>
+            <option value=0>11:00 AM</option>
+            <option value=0>12:00 PM</option>
+            <option value=0>13:00 PM</option>
+            <option value=0>14:00 PM</option>
+            <option value=0>15:00 PM</option>
+            <option value=0>16:00 PM</option>
+            <option value=0>17:00 PM</option>
+            <option value=1>18:00 PM</option>
+            <option value=0>19:00 PM</option>
+            <option value=0>20:00 PM</option>
+            <option value=0>21:00 PM</option>
+            <option value=0>22:00 PM</option>
+            <option value=0>23:00 PM</option>
+            </select>
+        </h3>
+        <h3> Month:
+            <select name = 'Month_11'>
+                <option value=0>January</option>
+                <option value=0>February</option>
+                <option value=0>March</option>
+                <option value=0>April</option>
+                <option value=0>May</option>
+                <option value=0>June</option>
+                <option value=0>July</option>
+                <option value=0>August</option>
+                <option value=0>September</option>
+                <option value=0>October</option>
+                <option value=1>November</option>
+                <option value=0>December</option>
+
+            </select>
+        </h3>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
